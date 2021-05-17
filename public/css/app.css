@@ -33375,7 +33375,23 @@ select {
 }
 
 body{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rubik', sans-serif;
+}
+
+.bg-custom-green{
+  background: #becf00;
+}
+
+.text-custom-green{
+  color: #becf00;
+}
+
+.bg-custom-blue{
+  background: #242451;
+}
+
+.text-custom-blue{
+  color: #242451;
 }
 
 .custom-file-input {

@@ -10,6 +10,7 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ use App\Http\Controllers\FollowController;
 
 /** Threads Ressource Controller */
 
-// Route::get('/', [ThreadController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/blog', [ThreadController::class, 'index'])->name('threads.index');
 Route::get('/blog/{channel:name}/{thread:slug}', [ThreadController::class, 'show'])->name('threads.show');
 Route::get('/blog/{channel:name}', [ChannelController::class, 'index'])->name('threads.show');
