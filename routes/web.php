@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,13 @@ use App\Http\Controllers\HomeController;
 /** Threads Ressource Controller */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/products/product-name', [ProductController::class, 'show'])->name('products.show');
+
 Route::get('/blog', [ThreadController::class, 'index'])->name('threads.index');
+
 Route::get('/blog/{channel:name}/{thread:slug}', [ThreadController::class, 'show'])->name('threads.show');
+
 Route::get('/blog/{channel:name}', [ChannelController::class, 'index'])->name('threads.show');
 
 Route::get('/profiles/{user:name}', [ProfileController::class, 'show'])->name('profile.show');
@@ -35,6 +41,7 @@ Route::get('/profiles/{user:name}', [ProfileController::class, 'show'])->name('p
 Route::get('/profiles/{user:name}/followers', [FollowController::class, 'index'])->name('follow.index');
 
 Route::post('/blog/{channel:name}/{thread:slug}/replies', [ReplyController::class, 'store'])->name('reply.store');
+
 
 /** Thread ressource Author */ 
 

@@ -41,11 +41,11 @@
             </x-custom.flash>
         @endif
         <div class="bg-custom-green">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                 @yield('upperbar')
             </div>
         </div>
-        <div class="">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             @auth
                 @include('layouts.partials.main-navigation')   
             @else
@@ -55,7 +55,7 @@
         <div>
             @yield('header')
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             @yield('content')
         </div>
 

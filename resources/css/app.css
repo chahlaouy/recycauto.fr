@@ -18,6 +18,9 @@ body{
 .text-custom-blue{
     color: #242451;
 }
+.border-custom-green{
+   border-color: #becf00;
+}
 
 .custom-file-input {
     color: transparent;

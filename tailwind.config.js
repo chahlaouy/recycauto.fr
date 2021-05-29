@@ -13,11 +13,29 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        borderColor: theme => ({
+            ...theme('colors'),
+             DEFAULT: theme('colors.gray.300', 'currentColor'),
+            'primary': '#becf00;',
+            'secondary': '#ffed4a',
+            'danger': '#e3342f',
+        }),
+        backgroundColor: theme => ({
+            ...theme('colors'),
+             DEFAULT: theme('colors.gray.300', 'currentColor'),
+            'primary': '#becf00;'
+        }),
+        textColor: theme => ({
+            ...theme('colors'),
+             DEFAULT: theme('colors.gray.300', 'currentColor'),
+            'primary': '#becf00;'
+        }),
     },
 
     variants: {
         extend: {
             opacity: ['disabled'],
+            fontWeight: ['hover']
         },
     },
 

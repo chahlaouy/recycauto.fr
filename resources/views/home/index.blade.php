@@ -4,7 +4,7 @@
     @include('layouts.partials.upperbar')
 @endsection
 @section('content')
-    <section class="mt-12">
+    <section class="mt-12 mb-24">
         <div class="flex">
             <div class="flex-1 mr-4">
                 @include('layouts.slider')
@@ -12,7 +12,7 @@
             <div class="w-96 flex flex-col ">
 
                 {{-- card --}}
-                <div class="relative rounded bg-white flex h-60 mb-8">
+                {{-- <div class="relative rounded bg-white flex h-60 mb-8">
                     <div class="w-60 h-60 absolute z-40 flex items-center">
                         <div class="pl-4">
                             <span class="uppercase text-sm text-custom-green">BOITIER UPC</span>
@@ -24,10 +24,10 @@
                     <div class="w-96 absolute z-30">
                         <img src="{{ asset('assets/images/img.jpg') }}" alt="" class="">
                     </div>
-                </div>
+                </div> --}}
                 
                 {{-- card --}}
-                <div class="relative rounded bg-white flex h-60">
+                {{-- <div class="relative rounded bg-white flex h-60">
                     <div class="w-60 h-60 absolute z-40 flex items-center">
                         <div class="pl-4">
                             <span class="uppercase text-sm text-custom-green">BOITIER UPC</span>
@@ -39,13 +39,52 @@
                     <div class="w-96 absolute z-30">
                         <img src="{{ asset('assets/images/img.jpg') }}" alt="" class="">
                     </div>
-                </div>
+                </div> --}}
                 
-
+                @include('home.partials.card')
+                @include('home.partials.card')
                 
                 
             </div>
         </div>
         
+    </section>
+    <section class="mb-12">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <div class="mb-8">
+                    @include('home.partials.categories')
+                </div>
+                <div class="mb-8">
+                    @include('home.partials.brands-card')
+                </div>
+                <div>
+                    @include('home.partials.hot-offers-card')
+                </div>
+            </div>
+
+            <div class="flex-1">
+                <div class="mb-16">
+                    <x-custom.accordion />
+                </div>
+
+                <div class="mb-16">
+                    <x-custom.ads-card />
+                </div>
+
+                <div class="mb-16">
+                    <x-custom.accordion />
+                </div>
+
+                <div class="mb-16">
+                    <x-custom.ads-card />
+                </div>
+
+                <div>
+                    <x-custom.accordion />
+                </div>
+
+            </div>
+        </div>
     </section>
 @endsection

@@ -20,7 +20,7 @@ class ThreadController extends Controller
         if( $request['by']){
 
             $user= User::where('name', $request['by'])->firstOrFail();
-            return view('home.index', [
+            return view('home.blog', [
                 'threads'   =>  Thread::where('user_id', $user->id)
                                             ->withCount('replies')->paginate(10)
             ]);
@@ -28,7 +28,7 @@ class ThreadController extends Controller
         if( $request['popular']){
 
             
-            return view('home.index', [
+            return view('home.blog', [
                 'threads'   =>  Thread::orderBy('replies_count', 'desc')
                                                 ->withCount('replies')->paginate(10),
             ]);
@@ -36,12 +36,12 @@ class ThreadController extends Controller
         if( $request['timeline']){
 
             
-            return view('home.index', [
+            return view('home.blog', [
                 'threads'   =>  Thread::orderBy('replies_count', 'desc')
                                                 ->withCount('replies')->paginate(10),
             ]);
         }
-        return view('home.index', [
+        return view('home.blog', [
             'threads'   =>  Thread::latest()->simplePaginate(10)
         ]);
     }
